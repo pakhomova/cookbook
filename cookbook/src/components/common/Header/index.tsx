@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import {styles} from './styles';
-import injectSheet from 'react-jss';
+import withStyles, { WithStyles } from 'react-jss';
 
-@injectSheet(styles)
-export default class Header extends Component {
+class Header extends Component<WithStyles<any>> {
     render() {
 
         return(
-            <h1>
-                {this.props.children}
-            </h1>
+            <header>
+                <h1 className={this.props.classes.header}>
+                    {this.props.children}
+                </h1>
+            </header>
         );
     }
 }
+
+export default withStyles(styles)(Header);
