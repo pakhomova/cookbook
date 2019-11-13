@@ -1,6 +1,6 @@
-import IRecipe from '../../common/IRecipe';
+import IRecipeWithLastVersion from '../../common/IRecipeWithLastVersion';
 
 export default interface IRecepiesAction {
     type: string;
-    recepies?: IRecipe[]
+    recepies?: IRecipeWithLastVersion[]
 }

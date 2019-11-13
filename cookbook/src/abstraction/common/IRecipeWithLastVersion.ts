@@ -1,4 +1,4 @@
-import IVersion from '../../../common/IVersion';
+import IVersion from './IVersion';
 
 export default interface IRecipeWithLastVersion {
     id: number;

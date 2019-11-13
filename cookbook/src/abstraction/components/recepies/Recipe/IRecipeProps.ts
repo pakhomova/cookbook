@@ -1,7 +1,6 @@
 import { WithStyles } from 'react-jss';
-import IVersion from '../../../common/IVersion';
+import IRecipeWithLastVersion from '../../../common/IRecipeWithLastVersion';
 
-export default interface IRecipeProps extends WithStyles<any> {
-    id: number;
-    version: IVersion
+export default interface IRecipeProps extends WithStyles<any>, IRecipeWithLastVersion {
+
 }

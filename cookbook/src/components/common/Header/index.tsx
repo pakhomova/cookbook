@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {styles} from './styles';
-import withStyles, { WithStyles } from 'react-jss';
+import withStyles from 'react-jss';
+import IHeaderProps from '../../../abstraction/components/common/Header/IHeaderProps';
 
-class Header extends Component<WithStyles<any>> {
+class Header extends Component<IHeaderProps> {
     render() {
 
         return(
             <header>
                 <h1 className={this.props.classes.header}>
-                    {this.props.children}
+                    {this.props.headerText}
                 </h1>
             </header>
         );

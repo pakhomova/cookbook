@@ -3,7 +3,7 @@ export const styles = {
         fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
         fontSize: '1rem',
         padding: '0.5em',
-        margin: '1em',
+        margin: '0.5em',
         background: '#fff',
         border: '2px solid #f2d49f',
         borderRadius: '0.5em',

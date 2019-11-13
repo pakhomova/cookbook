@@ -1,7 +1,7 @@
-import IRecipe from '../../common/IRecipe';
+import IRecipeWithLastVersion from '../../common/IRecipeWithLastVersion';
 
 export default interface IRecepiesState {
-    recepies: IRecipe[];
+    recepies: IRecipeWithLastVersion[];
     isLoading: boolean;
     hasErrored: boolean
 }

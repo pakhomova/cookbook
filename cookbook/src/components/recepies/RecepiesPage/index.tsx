@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import Header from '../../common/Header';
-import IRecipeWithLastVersion from '../../../abstraction/components/recepies/RecepiesPage/IRecipeWithLastVersion';
+import IRecipeWithLastVersion from '../../../abstraction/common/IRecipeWithLastVersion';
 import Recipe from '../Recipe';
-import Button from '../../common/Button';
+import LeftButton from '../../common/buttons/LeftButton';
+import LoadingMessage from '../../common/messages/LoadingMessage';
+import ErrorMessage from '../../common/messages/ErrorMessage';
 import routes from '../../../constants/routes.json';
-import {withRouter, RouteComponentProps} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
+import IRecepiesPageProps from '../../../abstraction/components/recepies/RecepiesPage/IRecepiesPageProps';
 
 const recepies: IRecipeWithLastVersion[] = [
     {id: 0,
@@ -27,18 +30,21 @@ const recepies: IRecipeWithLastVersion[] = [
     }
 ];
 
-class RecepiesPage extends Component<RouteComponentProps> {
+class RecepiesPage extends Component<IRecepiesPageProps> {
+
+    componentDidMount = () => {
+        this.props.getRecepies('');
+    };
+
     render() {
         return(
-            <div>
-                <Header>
-                    Recepies
-                </Header>
-                <Button title='Add recipe' onClick={this.onAddButtonClick} />
+            <>
+                <Header headerText='Recepies' />
+                <LeftButton title='Add recipe' onClick={this.onAddButtonClick} />
                 {recepies.map((recipe: IRecipeWithLastVersion) => (
                     <Recipe key={recipe.id} id={recipe.id} version={recipe.version} />
                 ))}
-            </div>
+            </>
         );
     }
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {styles} from './styles';
 import withStyles from 'react-jss';
-import IButtonProps from '../../../abstraction/components/common/Button/IButtonProps';
+import IButtonProps from '../../../../abstraction/components/common/Button/IButtonProps';
 
 class Button extends Component<IButtonProps> {
     render() {

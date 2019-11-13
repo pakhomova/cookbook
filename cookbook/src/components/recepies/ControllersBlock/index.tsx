@@ -7,17 +7,19 @@ import IControllersBlockProps from '../../../abstraction/components/recepies/Con
 
 class ControllersBlock extends Component<IControllersBlockProps> {
     render() {
+        const classes = this.props.classes;
+
         return(
-            <div className={this.props.classes.container}>
+            <div className={classes.container}>
                 <Link
-                    className={this.props.classes.navigationLink}
-                    to={routes.EDIT + '/' + this.props.recipeId}
+                    className={classes.navigationLink}
+                    to={routes.EDIT + '/' + (this.props.recipeId + 1)}
                 >
                     <i className="material-icons">edit</i>
                 </Link>
                 <Link
-                    className={this.props.classes.navigationLink}
-                    to={routes.VERSIONS + '/' + this.props.recipeId}
+                    className={classes.navigationLink}
+                    to={routes.VERSIONS + '/' + (this.props.recipeId + 1)}
                 >
                     <i className="material-icons">access_time</i>
                 </Link>
