@@ -1,5 +1,5 @@
 export default interface IEditPageState {
     isEditing: boolean;
-    id: number | undefined;
+    id: string | undefined;
     inputValue: string
 }

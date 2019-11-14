@@ -8,15 +8,10 @@ class TextArea extends Component<ITextAreaProps> {
         return(
             <div className={this.props.classes.container}>
                 <textarea
-                    onChange={this.onChange}
                     {...this.props}
                 />
             </div>
         );
-    };
-
-    onChange = (event: React.ChangeEvent) => {
-        this.props.onValueChange(event.target.nodeValue!);
     };
 }
 

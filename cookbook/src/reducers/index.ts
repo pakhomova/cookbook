@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import recepies from './recepies';
+import recipes from './recipes';
+import versions from './versions';
+import edit from './edit';
 
 export const rootReducer = combineReducers({
-    recepies
+    recipes,
+    versions,
+    edit
 });

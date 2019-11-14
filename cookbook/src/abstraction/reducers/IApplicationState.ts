@@ -1,5 +1,9 @@
-import IRecepiesState from './recepies/IRecepiesState';
+import IRecipesState from './recipes/IRecipesState';
+import IVersionsState from './versions/IVersionsState'
+import IEditState from './edit/IEditState';
 
 export default interface IApplicationState {
-    recepies: IRecepiesState
+    recipes: IRecipesState;
+    versions: IVersionsState;
+    edit: IEditState
 }

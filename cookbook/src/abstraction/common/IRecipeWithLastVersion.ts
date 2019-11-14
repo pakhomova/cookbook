@@ -1,6 +1,6 @@
 import IVersion from './IVersion';
 
 export default interface IRecipeWithLastVersion {
-    id: number;
+    id: string;
     version: IVersion
 }

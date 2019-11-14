@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import VersionsPage from '../../components/versions/VersionsPage';
+import RecipesPage from '../../components/recipes/RecipesPage';
 import IApplicationState from '../../abstraction/reducers/IApplicationState';
-import {getVersions} from '../../actions/versions';
+import {getRecipes} from '../../actions/recipes';
 
 const mapStateToProps = (state: IApplicationState) => (
-  {...state.versions}
-);
+  {...state.recipes}
+  );
 
 const mapDispatchToProps = {
-  getVersions
+  getRecipes
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(VersionsPage);
+)(RecipesPage);

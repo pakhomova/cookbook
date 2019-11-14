@@ -5,9 +5,10 @@ import LeftButton from '../../common/buttons/LeftButton';
 import BlockContainer from '../../common/BlockContainer';
 import IVersion from '../../../abstraction/common/IVersion';
 import routes from '../../../constants/routes.json';
-import {withRouter, RouteComponentProps} from 'react-router-dom';
-import IVersionsPageState from '../../../abstraction/components/versions/VersionsPage/IVersionsPageState';
-import {findIdFromUrl, Params} from '../../../helpers/router';
+import IVersionsPageProps from '../../../abstraction/components/versions/VersionsPage/IVersionsPageProps';
+import LoadingMessage from '../../common/messages/LoadingMessage';
+import ErrorMessage from '../../common/messages/ErrorMessage';
+import { withRouter } from 'react-router';
 
 const versions: IVersion[] = [
     {
@@ -24,21 +25,19 @@ const versions: IVersion[] = [
     }
 ];
 
-class VersionsPage extends Component<RouteComponentProps, IVersionsPageState> {
-    
-    constructor(props: RouteComponentProps) {
-        super(props);
+class VersionsPage extends Component<IVersionsPageProps> {
 
-        this.state = {
-            id: findIdFromUrl(this.props.match.params as Params)
-        }
-    }
+    componentDidMount = () => {
+        //this.props.getVersions('');
+    };
 
     render() {
+        if(this.props.isLoading) return <LoadingMessage />;
+        else if(this.props.hasErrored) return <ErrorMessage />;
         return(
             <>
-                <Header headerText={'Versions of recipe ' + (this.state.id + 1)} />
-                <LeftButton title='Back to recepies page' onClick={this.onBackButtonClick} />
+                <Header headerText={'Versions of recipe '} />
+                <LeftButton title='Back to recipes page' onClick={this.onBackButtonClick} />
                 {versions.map((version: IVersion) => (
                     <BlockContainer key={version.date.toString()}>
                         <Version {...version} />
@@ -46,7 +45,7 @@ class VersionsPage extends Component<RouteComponentProps, IVersionsPageState> {
                 ))}
             </>
         );
-    }
+    };
 
     onBackButtonClick = (event: React.MouseEvent) => {
         this.props.history.push(routes.HOME);

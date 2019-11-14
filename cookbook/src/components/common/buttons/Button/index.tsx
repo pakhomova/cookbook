@@ -8,7 +8,7 @@ class Button extends Component<IButtonProps> {
         return(
             <button
                 className={this.props.classes.button}
-                onClick={this.props.onClick}
+                {...this.props}
             >
                 {this.props.title}
             </button>
