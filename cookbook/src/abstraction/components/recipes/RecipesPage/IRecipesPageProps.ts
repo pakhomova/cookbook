@@ -1,7 +1,6 @@
-import {RouteComponentProps} from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 import IRecipesState from '../../../reducers/recipes/IRecipesState';
 
-export default interface IRecipesPageProps extends
-    IRecipesState, RouteComponentProps {
-    getRecipes: any
+export default interface IRecipesPageProps extends IRecipesState, RouteComponentProps {
+  getRecipes: any;
 }

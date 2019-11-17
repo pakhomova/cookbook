@@ -4,7 +4,7 @@ import versions from './versions';
 import edit from './edit';
 
 export const rootReducer = combineReducers({
-    recipes,
-    versions,
-    edit
+  recipes,
+  versions,
+  edit
 });

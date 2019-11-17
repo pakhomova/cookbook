@@ -3,9 +3,9 @@ import IEditAction from '../abstraction/actions/edit/IEditAction';
 import * as actionTypes from '../constants/actions/edit';
 
 const initialState: IEditState = {
-    isSubmitting: false,
-    hasErrored: false,
-    submittingSuccess: false
+  isSubmitting: false,
+  hasErrored: false,
+  submittingSuccess: false
 };
 
 export default function edit(state = initialState, action: IEditAction) {
@@ -31,12 +31,12 @@ export default function edit(state = initialState, action: IEditAction) {
       };
     }
     case actionTypes.SUBMITTING_POST_SUCCESS: {
-        return {
-          ...state,
-          submittingSuccess: true,
-          isSubmitting: false
-        };
-      }
+      return {
+        ...state,
+        submittingSuccess: true,
+        isSubmitting: false
+      };
+    }
     default:
       return state;
   }

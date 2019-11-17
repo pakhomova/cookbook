@@ -1,7 +1,7 @@
 export const styles = {
-    leftButtonContainer: {
-        '& button': {
-            marginLeft: '1rem'
-        }
+  leftButtonContainer: {
+    '& button': {
+      marginLeft: '1rem'
     }
+  }
 };

@@ -3,9 +3,9 @@ import IVersionsAction from '../abstraction/actions/versions/IVersionsAction';
 import * as actionTypes from '../constants/actions/versions';
 
 const initialState: IVersionsState = {
-    versions: [],
-    isLoading: false,
-    hasErrored: false
+  versions: [],
+  isLoading: false,
+  hasErrored: false
 };
 
 export default function versions(state = initialState, action: IVersionsAction) {

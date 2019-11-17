@@ -3,9 +3,9 @@ import IRecipesAction from '../abstraction/actions/recipes/IRecipesAction';
 import * as actionTypes from '../constants/actions/recipes';
 
 const initialState: IRecipesState = {
-    recipes: [],
-    isLoading: false,
-    hasErrored: false
+  recipes: [],
+  isLoading: false,
+  hasErrored: false
 };
 
 export default function recipes(state = initialState, action: IRecipesAction) {

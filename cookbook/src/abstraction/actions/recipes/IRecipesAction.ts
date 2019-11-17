@@ -1,6 +1,6 @@
 import IRecipeWithLastVersion from '../../common/IRecipeWithLastVersion';
 
 export default interface IRecipesAction {
-    type: string;
-    recipes?: IRecipeWithLastVersion[]
+  type: string;
+  recipes?: IRecipeWithLastVersion[];
 }

@@ -1,5 +1,5 @@
 export type Params = {
-    id: string;
-}
+  id: string;
+};
 
-export const findIdFromUrl = (params: Params) =>  params.id;
+export const findIdFromUrl = (params: Params) => params.id;

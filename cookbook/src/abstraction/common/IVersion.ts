@@ -1,4 +1,4 @@
 export default interface IVersion {
-    date: Date;
-    description: string
+  date: Date;
+  description: string;
 }

@@ -8,12 +8,12 @@ import { store } from './store/configureStore';
 import { Provider } from 'react-redux';
 
 ReactDOM.render(
-    <Provider store={store}>
-      <HashRouter>
-        <Routes />
-      </HashRouter>
-    </Provider>,
-    document.getElementById('root')
-  );
+  <Provider store={store}>
+    <HashRouter>
+      <Routes />
+    </HashRouter>
+  </Provider>,
+  document.getElementById('root')
+);
 
 serviceWorker.unregister();

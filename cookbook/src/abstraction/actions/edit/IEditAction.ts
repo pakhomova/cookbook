@@ -1,3 +1,3 @@
 export default interface IEditAction {
-    type: string
+  type: string;
 }

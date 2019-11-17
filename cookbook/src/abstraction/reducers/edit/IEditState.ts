@@ -1,5 +1,5 @@
 export default interface IEditState {
-    isSubmitting: boolean;
-    hasErrored: boolean;
-    submittingSuccess: boolean
+  isSubmitting: boolean;
+  hasErrored: boolean;
+  submittingSuccess: boolean;
 }
