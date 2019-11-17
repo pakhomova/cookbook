@@ -9,7 +9,7 @@ import RecipeResponse from '../models/response/RecipeResponse';
 export const getLatestRecipes = async () => {
   let items: Recipe[] = await RecipeDoc.find();
   let ids = items.map(item => item.actualVersion);
-  let result: RecipeVersion[] = await RecipeVersionDoc.find({ _id: { $in: ids } });
+  let result: RecipeVersion[] = await RecipeVersionDoc.find({ _id: { $in: ids } }).sort({ dateCreated: 'descending' });
   return mapRecipesToResponse(result);
 };
 
@@ -59,7 +59,9 @@ export const getAllVersionsOfRecipe = async (recipeId: string | null) => {
   }
 
   try {
-    let recipeVersions: RecipeVersion[] = await RecipeVersionDoc.find({ recipeId: recipeId });
+    let recipeVersions: RecipeVersion[] = await RecipeVersionDoc.find({ recipeId: recipeId }).sort({
+      dateCreated: 'descending'
+    });
     return mapRecipesToResponse(recipeVersions);
   } catch (e) {
     throw new NotFoundException('No such recipe id');
